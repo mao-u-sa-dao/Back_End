@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Hoc_Tap\\reactjs_with_webapi\\API_for_ReactJS\\WebApplication1\\wwwroot\\img\\Banner-quangcao.jpg",
+      "PackagePath": "staticwebassets\\img\\Banner-quangcao.jpg"
+    },
+    {
+      "Id": "C:\\Hoc_Tap\\reactjs_with_webapi\\API_for_ReactJS\\WebApplication1\\wwwroot\\img\\List-Movies-Avatar\\hinh-anh-kiem-hiep-1.jpg",
+      "PackagePath": "staticwebassets\\img\\List-Movies-Avatar\\hinh-anh-kiem-hiep-1.jpg"
+    },
+    {
+      "Id": "C:\\Hoc_Tap\\reactjs_with_webapi\\API_for_ReactJS\\WebApplication1\\wwwroot\\img\\List-Movies-Avatar\\hinh-nen-7-vien-ngoc-rong-dep-nhat-17.jpg",
+      "PackagePath": "staticwebassets\\img\\List-Movies-Avatar\\hinh-nen-7-vien-ngoc-rong-dep-nhat-17.jpg"
+    },
+    {
+      "Id": "C:\\Hoc_Tap\\reactjs_with_webapi\\API_for_ReactJS\\WebApplication1\\wwwroot\\img\\List-Movies-Avatar\\kiemhiep-2.jpg",
+      "PackagePath": "staticwebassets\\img\\List-Movies-Avatar\\kiemhiep-2.jpg"
+    },
+    {
+      "Id": "C:\\Hoc_Tap\\reactjs_with_webapi\\API_for_ReactJS\\WebApplication1\\wwwroot\\img\\List-Movies-Avatar\\kiemhiep-3.jpg",
+      "PackagePath": "staticwebassets\\img\\List-Movies-Avatar\\kiemhiep-3.jpg"
+    },
+    {
+      "Id": "C:\\Hoc_Tap\\reactjs_with_webapi\\API_for_ReactJS\\WebApplication1\\wwwroot\\img\\List-Movies-Avatar\\kiemhiep-4.jpg",
+      "PackagePath": "staticwebassets\\img\\List-Movies-Avatar\\kiemhiep-4.jpg"
+    },
+    {
+      "Id": "C:\\Hoc_Tap\\reactjs_with_webapi\\API_for_ReactJS\\WebApplication1\\wwwroot\\img\\List-Movies-Avatar\\kiemhiep-5.jpg",
+      "PackagePath": "staticwebassets\\img\\List-Movies-Avatar\\kiemhiep-5.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebApplication1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.WebApplication1.props",
+      "PackagePath": "build\\WebApplication1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApplication1.props",
+      "PackagePath": "buildMultiTargeting\\WebApplication1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.WebApplication1.props",
+      "PackagePath": "buildTransitive\\WebApplication1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
