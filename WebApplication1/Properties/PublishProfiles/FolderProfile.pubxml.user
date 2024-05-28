@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Hoc_Tap\reactjs_with_webapi\API_for_ReactJS\WebApplication1\bin\Release\net7.0\publish\</_PublishTargetUrl>
+    <History>True|2024-05-07T01:34:38.2597373Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="myconnectionstring">
+      <Value>Data Source=SQL5113.site4now.net%3bInitial Catalog=db_aa6d8f_movie%3bUser Id=db_aa6d8f_movie_admin%3bPassword=quan070403</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -2,20 +2,44 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 using WebApplication1.Repositories;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace WebApplication1.Services
 {
     public class MovieAuthorService
     {
-        private readonly IRepository<MovieAuthor> _movieAuthorRepository;
-        public MovieAuthorService(IRepository<MovieAuthor> movieAuthorRepository)
+        private readonly IMovieAuthorRepository<MovieAuthor> _movieAuthorRepository;
+        public MovieAuthorService(IMovieAuthorRepository<MovieAuthor> movieAuthorRepository)
         {
             _movieAuthorRepository = movieAuthorRepository;
         }
 
-        public async Task<List<MovieAuthor>> GetAllAuthor()
+        public async Task<PagedResult<MovieAuthor>> GetAllAuthor(int pageNumber)
         {
-            return await _movieAuthorRepository.GetAllAsync();
+            if (pageNumber > 0)
+            {
+
+
+                int pageSize = 10;
+                var auThor = await _movieAuthorRepository.GetAllAsync();
+                var totalItems = auThor.Count();
+                var items = auThor.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
+                var totalPage = (int)Math.Ceiling((double)totalItems / pageSize);
+                return new PagedResult<MovieAuthor>
+                {
+                    CurrentPage = pageNumber,
+                    PageSize = pageSize,
+                    TotalItems = totalItems,
+                    TotalPages = totalPage,
+                    Items = items
+                };
+            }
+            var author =  await _movieAuthorRepository.GetAllAsync();
+            return new PagedResult<MovieAuthor>
+            {
+                Items = author,
+            };
         }
 
         public async Task<MovieAuthor> GetAuthorById(int id)

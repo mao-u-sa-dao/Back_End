@@ -17,5 +17,5 @@ public partial class Movie
 
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
-    public virtual MoviesList MovieListIdNavigation { get; set; } = null!;
+    public virtual MoviesList? MovieList { get; set; }
 }

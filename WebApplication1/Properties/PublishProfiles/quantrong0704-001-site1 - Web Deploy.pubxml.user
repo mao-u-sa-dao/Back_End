@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAme7n01dgGUCRECwnuAsobgAAAAACAAAAAAAQZgAAAAEAACAAAAC4P/8VdjhfNc04a+h4Zkn+ekMsVrWmcuFJ2iMpEpthDwAAAAAOgAAAAAIAACAAAABkV1REN6xn4pb4rG/NkKZgSCU/as98OXBzh3fIAlLv1yAAAADIFnDV9KvyKg98JbtNOGpcVF0K/qlXNAbWlN71SRg+JkAAAABIyTzP+gysp0P+UBauWvAniWtHjWj7kN/owHz5auqe7lliP/GRHfVvbQfGjcUV915/mGwZHnxgOGgcppsgghp9</EncryptedPassword>
+    <History>True|2024-05-06T10:21:07.8202288Z;False|2024-05-06T17:20:23.4946479+07:00;True|2024-05-04T13:35:13.9351879+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="myconnectionstring">
+      <Value>Data Source=SQL5113.site4now.net%3bInitial Catalog=db_aa6d8f_movie%3bUser Id=db_aa6d8f_movie_admin%3bPassword=quan070403</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1770 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/v1/api/AdminAccountUser/page={pageNumber}": {
+      "get": {
+        "tags": [
+          "AdminAccountUser"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageNumber",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AccountUser"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminAccountUser/{id}": {
+      "get": {
+        "tags": [
+          "AdminAccountUser"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/AccountUser"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AdminAccountUser"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminAccountUser": {
+      "post": {
+        "tags": [
+          "AdminAccountUser"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AccountUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AdminAccountUser"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AccountUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminAuthor/page={pageSize}": {
+      "get": {
+        "tags": [
+          "AdminAuthor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageSize",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MovieAuthor"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminAuthor/{id}": {
+      "get": {
+        "tags": [
+          "AdminAuthor"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MovieAuthor"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AdminAuthor"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MovieAuthor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AdminAuthor"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminAuthor": {
+      "post": {
+        "tags": [
+          "AdminAuthor"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MovieAuthor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminBillMovie/page={pageNumber}": {
+      "get": {
+        "tags": [
+          "AdminBillMovie"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageNumber",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesBill"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminBillMovie/{idUser}": {
+      "get": {
+        "tags": [
+          "AdminBillMovie"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "idUser",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesBill"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminBillMovie": {
+      "post": {
+        "tags": [
+          "AdminBillMovie"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MoviesBill"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminCategory/page={pageNumber}": {
+      "get": {
+        "tags": [
+          "AdminCategory"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageNumber",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MovieCategory"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminCategory": {
+      "post": {
+        "tags": [
+          "AdminCategory"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MovieCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MovieCategory"
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminCategory/{id}": {
+      "put": {
+        "tags": [
+          "AdminCategory"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MovieCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MovieCategory"
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminInforAccountUser/{id}": {
+      "get": {
+        "tags": [
+          "AdminInforAccountUser"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AdminInforAccountUser"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/InforAccountUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminInforAccountUser": {
+      "post": {
+        "tags": [
+          "AdminInforAccountUser"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/InforAccountUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminListMovie/page={pageNumber}": {
+      "get": {
+        "tags": [
+          "AdminListMovie"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageNumber",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesList"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/AdminListMovie/{id}": {
+      "get": {
+        "tags": [
+          "AdminListMovie"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MoviesList"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AdminListMovie"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminListMovie": {
+      "post": {
+        "tags": [
+          "AdminListMovie"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "MovieListId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "MovieListName",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Deseribe",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "AvatarMovie",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Price",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "formData",
+            "name": "CategoryId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "AuthorId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "Author.AuthorId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "Author.AuthorName",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Author.MoviesLists",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesList"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "Category.CategoryId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "Category.CategoryName",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Category.MoviesLists",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesList"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "Movies",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Movie"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "MoviesBills",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesBill"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "MoviesUserOwneds",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesUserOwned"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "ContentType",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "ContentDisposition",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Headers",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Length",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "formData",
+            "name": "Name",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "FileName",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AdminListMovie"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "MovieListId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "MovieListName",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Deseribe",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "AvatarMovie",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Price",
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "in": "formData",
+            "name": "CategoryId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "AuthorId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "Author.AuthorId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "Author.AuthorName",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Author.MoviesLists",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesList"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "Category.CategoryId",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "formData",
+            "name": "Category.CategoryName",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Category.MoviesLists",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesList"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "Movies",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Movie"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "MoviesBills",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesBill"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "MoviesUserOwneds",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MoviesUserOwned"
+            }
+          },
+          {
+            "in": "formData",
+            "name": "ContentType",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "ContentDisposition",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Headers",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Length",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "formData",
+            "name": "Name",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "FileName",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminMovieUserOwned": {
+      "get": {
+        "tags": [
+          "AdminMovieUserOwned"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesUserOwned"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AdminMovieUserOwned"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MoviesUserOwned"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/AdminMovieUserOwned/{id}": {
+      "get": {
+        "tags": [
+          "AdminMovieUserOwned"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesUserOwned"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AdminMovieUserOwned"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MoviesUserOwned"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AdminMovieUserOwned"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/Auth/Login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userName",
+            "type": "string",
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "passWord",
+            "type": "string",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/Comment": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Comment"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Comment"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/Comment/{id}/page={pageNumber}": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "pageNumber",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/InforAccount/{id}": {
+      "get": {
+        "tags": [
+          "InforAccount"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "InforAccount"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/InforAccountUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/Movie/{id}": {
+      "get": {
+        "tags": [
+          "Movie"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/Movie/{movieListId}/{movieId}": {
+      "get": {
+        "tags": [
+          "Movie"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "movieListId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "movieId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/MovieBill": {
+      "post": {
+        "tags": [
+          "MovieBill"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MoviesBill"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/MovieCategory": {
+      "get": {
+        "tags": [
+          "MovieCategory"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MovieCategory"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/MoviesList": {
+      "get": {
+        "tags": [
+          "MoviesList"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesList"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/MoviesList/{id}": {
+      "get": {
+        "tags": [
+          "MoviesList"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MoviesList"
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/MoviesList/category/{categoryId}": {
+      "get": {
+        "tags": [
+          "MoviesList"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "categoryId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MoviesList"
+            }
+          }
+        }
+      }
+    },
+    "/v1/api/MoviesUserOwned": {
+      "get": {
+        "tags": [
+          "MoviesUserOwned"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesUserOwned"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MoviesUserOwned"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MoviesUserOwned"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/api/MoviesUserOwned/{id}": {
+      "get": {
+        "tags": [
+          "MoviesUserOwned"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MoviesUserOwned"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AccountUser": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountName": {
+          "type": "string"
+        },
+        "accountPassword": {
+          "type": "string"
+        },
+        "accountRole": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountGmail": {
+          "type": "string"
+        },
+        "accountCreateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "comments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Comment"
+          }
+        },
+        "inforAccountUsers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InforAccountUser"
+          }
+        },
+        "moviesBills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoviesBill"
+          }
+        },
+        "moviesUserOwneds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoviesUserOwned"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Comment": {
+      "type": "object",
+      "properties": {
+        "commentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "commentContent": {
+          "type": "string"
+        },
+        "movieId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "commentCreateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/definitions/AccountUser"
+        },
+        "movie": {
+          "$ref": "#/definitions/Movie"
+        }
+      },
+      "additionalProperties": false
+    },
+    "InforAccountUser": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountMoney": {
+          "format": "double",
+          "type": "number"
+        },
+        "account": {
+          "$ref": "#/definitions/AccountUser"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Movie": {
+      "type": "object",
+      "properties": {
+        "movieId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "moviePart": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "movieListId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "deseribe": {
+          "type": "string"
+        },
+        "movieUrl": {
+          "type": "string"
+        },
+        "comments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Comment"
+          }
+        },
+        "movieList": {
+          "$ref": "#/definitions/MoviesList"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MovieAuthor": {
+      "type": "object",
+      "properties": {
+        "authorId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "moviesLists": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoviesList"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MovieCategory": {
+      "type": "object",
+      "properties": {
+        "categoryId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "categoryName": {
+          "type": "string"
+        },
+        "moviesLists": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoviesList"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MoviesBill": {
+      "type": "object",
+      "properties": {
+        "billId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "movieListId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "billCreateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/definitions/AccountUser"
+        },
+        "movieList": {
+          "$ref": "#/definitions/MoviesList"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MoviesList": {
+      "type": "object",
+      "properties": {
+        "movieListId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "movieListName": {
+          "type": "string"
+        },
+        "deseribe": {
+          "type": "string"
+        },
+        "avatarMovie": {
+          "type": "string"
+        },
+        "price": {
+          "format": "double",
+          "type": "number"
+        },
+        "categoryId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "authorId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "author": {
+          "$ref": "#/definitions/MovieAuthor"
+        },
+        "category": {
+          "$ref": "#/definitions/MovieCategory"
+        },
+        "movies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Movie"
+          }
+        },
+        "moviesBills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoviesBill"
+          }
+        },
+        "moviesUserOwneds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoviesUserOwned"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MoviesUserOwned": {
+      "type": "object",
+      "properties": {
+        "moviesUserOwnedId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "movieListId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "price": {
+          "format": "double",
+          "type": "number"
+        },
+        "account": {
+          "$ref": "#/definitions/AccountUser"
+        },
+        "movieList": {
+          "$ref": "#/definitions/MoviesList"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

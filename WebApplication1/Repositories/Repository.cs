@@ -31,11 +31,10 @@ namespace WebApplication1.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<List<T>> GetListByIdAsync(Expression<Func<T, bool>> expression, Expression<Func<T, object>> include)
+        public async Task<List<T>> GetListByIdAsync(Expression<Func<T, bool>> expression)
         {
             return _context.Set<T>()
                 .Where(expression)
-                .Include(include)
                 .ToList();
         }
         public async Task<List<T>> GetListByCategoryAsync(Expression<Func<T, bool>> expression)
@@ -44,6 +43,20 @@ namespace WebApplication1.Repositories
                 .Where(expression)
                 .ToList();
         }
+        public async Task<T> GetByWhereAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, bool>> predicate1)
+        {
+            return _context.Set<T>().Where(predicate).Where(predicate1).FirstOrDefault();
+        }
+        public async Task<List<T>> GetByIncludeAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, object>> include, Expression<Func<T, T>> select)
+        {
+            return await _context.Set<T>()
+                                 .Where(predicate)
+                                 .Include(include)
+                                 .Select(select) // Sử dụng Select với kiểu cụ thể là T
+                                 .ToListAsync();
+        }
+
+
         public async Task<T> GetByIdAsync(Expression<Func<T, bool>> predicate)
         {
             return _context.Set<T>().FirstOrDefault(predicate);

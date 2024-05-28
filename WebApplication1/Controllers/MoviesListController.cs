@@ -29,50 +29,22 @@ namespace WebApplication1.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<MoviesList>> GetMoviesListById(int id)
         {
-            var moviesList = await _moviesListService.GetMoviesListByCategory(id);
+            var moviesList = await _moviesListService.GetMoviesListById(id);
             if (moviesList == null)
             {
                 return NotFound();
             }
             return Ok(moviesList);
         }
-        [HttpPost]
-        public async Task<ActionResult> AddMoviesList(MoviesList moviesList)
+        [HttpGet("category/{categoryId}")]
+        public async Task<ActionResult<MoviesList>> GetMoviesListByCategory(int categoryId)
         {
-            try
+            var moviesList = await _moviesListService.GetMoviesListByCategory(categoryId);
+            if (moviesList == null)
             {
-                await _moviesListService.AddMoviesList(moviesList);
-                return Ok(moviesList);
-            }catch(Exception ex)
-            {
-                return BadRequest(ex.Message);
+                return NotFound();
             }
-        }
-        [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateMoviesList(int id, MoviesList moviesList)
-        {
-            try
-            {
-                await _moviesListService.UpdateMoviesList(id, moviesList);
-                return Ok(moviesList);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteMoviesList(int id)
-        {
-            try
-            {
-                await _moviesListService.DeleteMoviesList(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+            return Ok(moviesList);
+        } 
     }
 }

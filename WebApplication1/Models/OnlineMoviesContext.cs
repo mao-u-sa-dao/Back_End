@@ -15,9 +15,11 @@ public partial class OnlineMoviesContext : DbContext
     {
     }
 
-    public virtual DbSet<Account> Accounts { get; set; }
+    public virtual DbSet<AccountUser> AccountUsers { get; set; }
 
     public virtual DbSet<Comment> Comments { get; set; }
+
+    public virtual DbSet<InforAccountUser> InforAccountUsers { get; set; }
 
     public virtual DbSet<Movie> Movies { get; set; }
 
@@ -25,21 +27,26 @@ public partial class OnlineMoviesContext : DbContext
 
     public virtual DbSet<MovieCategory> MovieCategories { get; set; }
 
+    public virtual DbSet<MoviesBill> MoviesBills { get; set; }
+
     public virtual DbSet<MoviesList> MoviesLists { get; set; }
 
     public virtual DbSet<MoviesUserOwned> MoviesUserOwneds { get; set; }
 
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+    //    => optionsBuilder.UseSqlServer("Data Source=DESKTOP-BI83N0Q;Initial Catalog=Online_Movies;Persist Security Info=True;User ID=sa;Password=quan154;Encrypt=True;Trust Server Certificate=True");
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-BI83N0Q;Initial Catalog=Online_Movies;Persist Security Info=True;User ID=sa;Password=quan154;Encrypt=True;Trust Server Certificate=True");
+
+       => optionsBuilder.UseSqlServer("Data Source=tcp:azure-movie.database.windows.net,1433;Initial Catalog=azure_db_movie;Persist Security Info=True;User ID=quan154;Password=vkiuoi154@;Encrypt=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Account>(entity =>
+        modelBuilder.Entity<AccountUser>(entity =>
         {
-            entity.HasKey(e => e.AccountId).HasName("PK__Account__B19E45C961DB40FD");
+            entity.HasKey(e => e.AccountId).HasName("PK__Account___B19E45C900B1C1C8");
 
-            entity.ToTable("Account");
+            entity.ToTable("Account_User");
 
             entity.Property(e => e.AccountId).HasColumnName("Account_ID");
             entity.Property(e => e.AccountCreateTime)
@@ -49,17 +56,15 @@ public partial class OnlineMoviesContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("Account_Gmail");
-            entity.Property(e => e.AccountMoney)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("Account_Money");
             entity.Property(e => e.AccountName)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("Account_Name");
             entity.Property(e => e.AccountPassword)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("Account_Password");
+            entity.Property(e => e.AccountRole).HasColumnName("Account_Role");
         });
 
         modelBuilder.Entity<Comment>(entity =>
@@ -78,13 +83,31 @@ public partial class OnlineMoviesContext : DbContext
 
             entity.HasOne(d => d.Account).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.AccountId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade) // Thay đổi hành vi xóa
                 .HasConstraintName("FK_Comments_Account");
 
             entity.HasOne(d => d.Movie).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.MovieId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Comments_Movies");
+        });
+
+        modelBuilder.Entity<InforAccountUser>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Infor_Ac__3214EC2740EAD5ED");
+
+            entity.ToTable("Infor_Account_User");
+
+            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.AccountId).HasColumnName("Account_ID");
+            entity.Property(e => e.AccountMoney)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("Account_Money");
+
+            entity.HasOne(d => d.Account).WithMany(p => p.InforAccountUsers)
+                .HasForeignKey(d => d.AccountId)
+                .OnDelete(DeleteBehavior.Cascade) // Thay đổi hành vi xóa
+                .HasConstraintName("FK_InforAccount_Account");
         });
 
         modelBuilder.Entity<Movie>(entity =>
@@ -99,7 +122,7 @@ public partial class OnlineMoviesContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("Movie_URL");
 
-            entity.HasOne(d => d.MovieListIdNavigation).WithMany(p => p.Movies)
+            entity.HasOne(d => d.MovieList).WithMany(p => p.Movies)
                 .HasForeignKey(d => d.MovieListId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Movies_MoviesList");
@@ -127,6 +150,30 @@ public partial class OnlineMoviesContext : DbContext
             entity.Property(e => e.CategoryName)
                 .HasMaxLength(50)
                 .HasColumnName("Category_Name");
+        });
+
+        modelBuilder.Entity<MoviesBill>(entity =>
+        {
+            entity.HasKey(e => e.BillId).HasName("PK__Movies_B__CF6E7D434A78976A");
+
+            entity.ToTable("Movies_Bill");
+
+            entity.Property(e => e.BillId).HasColumnName("Bill_ID");
+            entity.Property(e => e.AccountId).HasColumnName("Account_ID");
+            entity.Property(e => e.BillCreateTime)
+                .HasColumnType("datetime")
+                .HasColumnName("Bill_CreateTime");
+            entity.Property(e => e.MovieListId).HasColumnName("Movie_List_ID");
+
+            entity.HasOne(d => d.Account).WithMany(p => p.MoviesBills)
+                .HasForeignKey(d => d.AccountId)
+                .OnDelete(DeleteBehavior.Cascade) // Thay đổi hành vi xóa
+                .HasConstraintName("FK_Bill_Account");
+
+            entity.HasOne(d => d.MovieList).WithMany(p => p.MoviesBills)
+                .HasForeignKey(d => d.MovieListId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Bill_MoviesList");
         });
 
         modelBuilder.Entity<MoviesList>(entity =>
@@ -171,7 +218,7 @@ public partial class OnlineMoviesContext : DbContext
 
             entity.HasOne(d => d.Account).WithMany(p => p.MoviesUserOwneds)
                 .HasForeignKey(d => d.AccountId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade) // Thay đổi hành vi xóa
                 .HasConstraintName("FK_MoviesUserOwned_Account");
 
             entity.HasOne(d => d.MovieList).WithMany(p => p.MoviesUserOwneds)
@@ -182,6 +229,7 @@ public partial class OnlineMoviesContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
+
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

@@ -25,5 +25,7 @@ public partial class MoviesList
 
     public virtual ICollection<Movie> Movies { get; set; } = new List<Movie>();
 
+    public virtual ICollection<MoviesBill> MoviesBills { get; set; } = new List<MoviesBill>();
+
     public virtual ICollection<MoviesUserOwned> MoviesUserOwneds { get; set; } = new List<MoviesUserOwned>();
 }

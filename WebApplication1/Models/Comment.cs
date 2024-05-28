@@ -15,7 +15,7 @@ public partial class Comment
 
     public DateTime CommentCreateTime { get; set; }
 
-    public virtual Account? Account { get; set; }
+    public virtual AccountUser? Account { get; set; }
 
     public virtual Movie? Movie { get; set; }
 }

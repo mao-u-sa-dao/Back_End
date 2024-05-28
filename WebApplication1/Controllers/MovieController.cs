@@ -27,5 +27,17 @@ namespace WebApplication1.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("{movieListId}/{movieId}")]
+        public async Task<ActionResult<Movie>> GetMovieByPart(int movieListId, int movieId)
+        {
+            try
+            {
+                var movie = await _movieService.GetMovieByPart(movieListId, movieId);
+                return Ok(movie);
+            }catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

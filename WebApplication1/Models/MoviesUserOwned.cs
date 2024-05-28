@@ -13,7 +13,7 @@ public partial class MoviesUserOwned
 
     public decimal Price { get; set; }
 
-    public virtual Account? Account { get; set; }
+    public virtual AccountUser? Account { get; set; }
 
     public virtual MoviesList? MovieList { get; set; }
 }

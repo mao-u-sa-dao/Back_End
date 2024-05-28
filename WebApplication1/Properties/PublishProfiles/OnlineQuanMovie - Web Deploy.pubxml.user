@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAme7n01dgGUCRECwnuAsobgAAAAACAAAAAAAQZgAAAAEAACAAAAA1a114Oxjx2/McAsbqls6BFl29tTpnsx2bskDghq1hKwAAAAAOgAAAAAIAACAAAADkitkylifrK+Fgc3x6msZopPPkuHW7NGaFXUeU20dpCIAAAAC4wWAfXShFETV/I+IycZP74Al/S+RTlyd4MryTt9WXCC3H3mYlihLTQ0t2ZPSrIByS5UAL2cLnZouGLkocLH3hMYnZbVzqzRhmwpwrn8awa1rdhjUwib+NhE0rykd0MtEEKzYX16LejMOIUEnUj00t3BSrG80NKlz0EPNNiojc60AAAAD+0Igibb7LrAWlNA4E7StiFKK63hSG8BN7an8BfH/bv1vnIx9YZyJcx8spYsBc1bVmX1Uv6Aa8QvcgCEVr+JeD</EncryptedPassword>
+    <History>True|2024-05-28T03:20:17.9693291Z;False|2024-05-28T10:15:51.2496042+07:00;False|2024-05-28T10:14:11.4021596+07:00;False|2024-05-28T10:10:56.2467024+07:00;False|2024-05-28T08:39:12.7933547+07:00;False|2024-05-28T08:30:09.7823796+07:00;False|2024-05-28T08:28:11.5301336+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="myconnectionstring">
+      <Value>Data Source=tcp:azure-movie.database.windows.net,1433%3bInitial Catalog=azure_db_movie%3bPersist Security Info=True%3bUser ID=quan154%3bPassword=vkiuoi154%40%3bEncrypt=True%3bTrust Server Certificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
